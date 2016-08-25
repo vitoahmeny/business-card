@@ -1,0 +1,147 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  color: white;
+  font-family: 'Open Sans';
+  font-size: 14px;
+}
+
+label {
+  
+  cursor: pointer;
+  display: block;
+  height: 375px;
+  width: 630px;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  
+}
+
+.card {
+  height: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  -- Insert Vendor prefixes for transition and transform-style here --
+
+  width: 100%;
+  z-index: 1;  
+}
+
+.card > div {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -- Vendor prefix for backface-visibility --
+  border-radius: 5px;
+  height: 100%;
+  position: absolute;
+  width: 630px;
+  background: url(img/bg1.png);
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.card .back {
+  background: gray;
+  color: white;
+  transform: rotateX(180deg);
+  -- Vendor prefixes --
+  -webkit-transform: rotateX(180deg);
+  
+}
+
+label:hover .card {
+  
+  box-shadow: 1px 1px 2px purple ;
+  transform: rotateX(15deg);
+  -- Vendor prefixes --
+  -webkit-transform: rotateX(15deg);  
+}
+
+input {
+  
+  display: none;
+  
+}
+
+:checked + .card {
+  
+  transform: rotateX(180deg);
+  -- Vendor prefixes --
+  
+}
+
+label:hover :checked + .card {
+  
+  box-shadow: 1px 1px 5px black;
+  transform: rotateX(165deg);
+  -webkit-backface-visibility: hidden;
+  -- Vendor prefixes --
+  
+}
+
+.card .heading p {
+  font-weight: 100;
+  font-size: 3em;
+  margin-top: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.heading small {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+
+.description {
+  margin-right: 40px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.web a {
+  display: inline-block;
+  margin-right: 50px;
+  text-decoration: none;
+  color: #cd00cd;
+  margin-bottom: 30px;
+}
+
+.footer {
+}
+
+.footer img {
+  margin-right: 15px;
+}
+
+.footer > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer .footerText a {
+  color: #cd00cd;
+  text-decoration: none;
+}
+.footer .footerText p {
+  line-height: 0.5;
+}
+
+.footer .icons {
+  margin-left: 165px;
+}
