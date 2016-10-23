@@ -4,6 +4,7 @@ body {
   color: white;
   font-family: 'Open Sans';
   font-size: 14px;
+  background: rgb(82, 182, 209);
 }
 
 label {
@@ -20,11 +21,11 @@ label {
   position: absolute;
 
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  top: 10%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -o-transform: translate(-50%);
   
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
@@ -38,7 +39,12 @@ label {
   border-radius: 10px;
   transition: transform 0.5s;
   transform-style: preserve-3d;
-  -- Insert Vendor prefixes for transition and transform-style here --
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
 
   width: 100%;
   z-index: 1;  
@@ -47,6 +53,9 @@ label {
 .card > div {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+
   -- Vendor prefix for backface-visibility --
   border-radius: 5px;
   height: 100%;
@@ -63,6 +72,8 @@ label {
   transform: rotateX(180deg);
   -- Vendor prefixes --
   -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
   
 }
 
@@ -72,6 +83,8 @@ label:hover .card {
   transform: rotateX(15deg);
   -- Vendor prefixes --
   -webkit-transform: rotateX(15deg);  
+  -moz-transform: rotateX(15deg);  
+  -o-transform: rotateX(15deg);  
 }
 
 input {
@@ -83,6 +96,9 @@ input {
 :checked + .card {
   
   transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
   -- Vendor prefixes --
   
 }
@@ -92,6 +108,8 @@ label:hover :checked + .card {
   box-shadow: 1px 1px 5px black;
   transform: rotateX(165deg);
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
   -- Vendor prefixes --
   
 }
@@ -144,4 +162,37 @@ label:hover :checked + .card {
 
 .footer .icons {
   margin-left: 165px;
+}
+
+@media (max-width: 414px) {
+	label {
+		width: 95%;
+	}
+	.card > div {
+		width: 100%;
+	}
+	.card .heading p, .card .heading small {
+  	font-weight: 100;
+  	font-size: 1em;
+  	margin-top: 0;
+  	padding-top: 0;
+  	padding-bottom: 0;
+  	margin-bottom: 0;
+}
+	.description {
+ 		margin-right: 10px;
+ 		margin-top: 10px;
+ 		margin-bottom: 5px;
+}
+	.web a {
+  display: inline-block;
+  text-decoration: none;
+  color: #cd00cd;
+  margin-bottom: 10px;
+}
+.footer .icons {
+	margin-top: 10px;
+  margin-left: 0px;
+  padding-bottom: 5%;
+}
 }
